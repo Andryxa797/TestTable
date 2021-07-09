@@ -1,10 +1,16 @@
 import React from 'react'
-import {Table} from "./Table";
+import {Table} from "../../components/Table/Table";
 import {connect} from "react-redux";
-import {setSortField, toggleButtonIsVisible} from "../../redux/reducerTable";
-import {TableHeader} from "./TableHeader/TableHeader";
+import {setSortField, setStateData, toggleButtonIsVisible} from "../../redux/reducerTable";
+import {TableHeader} from "../../components/Table/TableHeader/TableHeader";
+import {columns} from "./columns";
+import {data} from "../../data/data";
 
 class TableContainer extends React.Component {
+
+    componentDidMount() {
+        this.props.setStateData(data.result, data.companies)
+    }
 
     sortData(sortOptions, companies) {
         let stateCompanies = [...companies]
@@ -23,17 +29,15 @@ class TableContainer extends React.Component {
     }
 
     render() {
-        const { columns, setSortField, sortOptions } = this.props
+        const {setSortField, sortOptions} = this.props
         return (
             <div className="container">
                 <table className="table">
-                    <TableHeader fields={this.props.fields}
-                                 setSortField={setSortField}
-                                 sortOptions={sortOptions}
-                                 columns={columns}/>
+                        <TableHeader setSortField={setSortField}
+                                     sortOptions={sortOptions}
+                                     columns={columns}/>
                     <tbody>
                         <Table result={this.props.result}
-                               fields={this.props.fields}
                                companies={this.sortData(this.props.sortOptions, this.props.companies)}
                                toggleButtonIsVisible={this.props.toggleButtonIsVisible}/>
                     </tbody>
@@ -54,5 +58,6 @@ let mapStateToProps = (state) => {
 
 export default connect(mapStateToProps, {
     toggleButtonIsVisible,
-    setSortField
+    setSortField,
+    setStateData
 })(TableContainer)

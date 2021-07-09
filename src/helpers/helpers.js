@@ -5,21 +5,26 @@ export const checkNull = (value) => {
         return value
     }
 }
-export const checkMaxLengthValue = (value, parent, key, fields) => {
+
+export const checkMaxLengthValue = (value, parent, key, columns) => {
     let addPoint = false
     let newValue = value
     if (+value > 0) {
         let maxLength = null
-        fields[parent].forEach((item) => {
-            if (item.key === key) {
-                maxLength = item.maxlength
+        columns.forEach((column) => {
+            if (column.key === parent) {
+                column.subColumns.forEach((item) => {
+                    if (item.key === key) {
+                        maxLength = item.maxlength
+                    }
+                })
             }
+
         })
         newValue = Math.round(+newValue)
         if (maxLength && newValue.toString().length > maxLength) {
             newValue = +newValue.toString().slice(0, maxLength)
             addPoint = true
-            console.log(parent, key, maxLength, 'Value - ', value, 'NewValue -', newValue)
         }
     }
     return {
@@ -27,6 +32,7 @@ export const checkMaxLengthValue = (value, parent, key, fields) => {
         addPoint
     }
 }
+
 export const partitioningValue = (value, addPoint) => {
     if (+value) {
         if (value >= 1000) {
@@ -44,11 +50,11 @@ export const partitioningValue = (value, addPoint) => {
             newMassive = newMassive.reverse().join('').trim()
 
             return !decimal ?
-                addPoint ? newMassive +'...': newMassive:
+                addPoint ? newMassive + '...' : newMassive :
                 newMassive + '.' + Math.round(decimal)
         }
-        return addPoint ? value +'...': value
+        return addPoint ? value + '...' : value
     } else {
-        return addPoint ? value +'...': value
+        return addPoint ? value + '...' : value
     }
 }

@@ -1,48 +1,53 @@
-import {TableHeader} from "./TableHeader/TableHeader";
 import React from "react";
 import {TableRowResult} from "./TableRow/TableRowResult";
 import {TableRowCompany} from "./TableRow/TableRowCompany";
 
-let Table = ({result, companies}) => {
 
+let Table = ({result, companies, toggleButtonIsVisible}) => {
+
+    let noProfitCompanyChild = (companyChild) => {
+        let noProfitCompany = true
+        let massive = Object.values(companyChild.result)
+        massive.forEach((item) => {
+            let massiveItem = Object.values(item)
+            massiveItem.forEach((value) => {
+                if (value !== 0 && value !== null) {
+                    noProfitCompany = false
+                }
+            })
+        })
+        return (noProfitCompany ?
+            "table__tr table__company__no_profit" :
+            "table__tr table__company__button_press")
+    }
     let childrenCompany = (company) => {
         if (company.isOpen) {
             return company.sources.map((companyChild) => {
                 return (
-                    <tr className="table__tr">
-                        <TableRowCompany company={companyChild}/>
+                    <tr key={company.id + '_' + companyChild.id} className={noProfitCompanyChild(companyChild)}>
+                        <TableRowCompany company={companyChild} isChild={true}/>
                         <TableRowResult result={companyChild.result}/>
                     </tr>
                 )
             })
         }
     }
-
     return (
+
         <>
-            <div className="container">
-                <table className="table">
-                    <TableHeader/>
-                    <tbody>
-                    <tr className="table__tr table__result">
-                        <td>Итого</td>
-                        <TableRowResult result={result}/>
+            <tr className="table__tr table__result">
+                <td>Итого</td>
+                { Object.keys(result).length? <TableRowResult result={result}/> : null}
+            </tr>
+            {companies && companies.map((company) =>
+                <>
+                    <tr key={company.id} className={company.isOpen ? "table__tr table__company__button_press" : "table__tr"}>
+                        <TableRowCompany company={company} toggleButtonIsVisible={toggleButtonIsVisible} isChild={false}/>
+                        <TableRowResult result={company.result}/>
                     </tr>
-                    {companies.map((company) => {
-                            return (
-                                <>
-                                <tr className="table__tr">
-                                    <TableRowCompany company={company}/>
-                                    <TableRowResult result={company.result}/>
-                                </tr>
-                                    {childrenCompany(company)}
-                                </>
-                        )
-                        }
-                    )}
-                    </tbody>
-                </table>
-            </div>
+                    {childrenCompany(company)}
+                </>
+            )}
         </>
     )
 }

@@ -1,22 +1,32 @@
 import React from "react";
+import {checkMaxLengthValue, checkNull, partitioningValue} from "../../../helpers/helpers";
+import {columns} from "../../../componentsContainer/Table/columns";
 
-let TableRowResult = ({result}) => {
-        return(
+const TableRowResult = ({result}) => {
+
+    const preprocessingValue = (value, parent, key, result) => {
+        value = checkNull(value)
+        value = checkMaxLengthValue(value, parent, key, result)
+        value = partitioningValue(value.newValue, value.addPoint )
+        return value
+    }
+
+    return (
         <>
-            <td data-traffic-impressions="">{result.traffic.impressions}</td>
-            <td data-traffic-clicks="">{result.traffic.clicks}</td>
-            <td data-traffic-session="">{result.traffic.sessions}</td>
-            <td data-traffic-ctr="">{result.traffic.ctr}</td>
-            <td data-traffic-price-click="">{result.traffic.priceClick}</td>
-            <td data-traffic-expenses="">{result.traffic.expenses}</td>
-            <td data-sales-quantity="">{result.sales.quantity}</td>
-            <td data-sales-cpa="">{result.sales.cpa}</td>
-            <td data-sales-revenue="">{result.sales.revenue}</td>
-            <td data-purpose-quantity="">{result.purpose.quantity}</td>
-            <td data-purpose-cpa="">{result.purpose.cpa}</td>
-            <td data-purpose-cr="">{result.purpose.cr}</td>
+            <td>{preprocessingValue(result.traffic.impressions, 'traffic', 'impressions', columns)}</td>
+            <td>{preprocessingValue(result.traffic.clicks, 'traffic', 'clicks', columns)}</td>
+            <td>{preprocessingValue(result.traffic.sessions, 'traffic', 'sessions', columns)}</td>
+            <td>{preprocessingValue(result.traffic.ctr, 'traffic', 'ctr', columns)}</td>
+            <td>{preprocessingValue(result.traffic.priceClick, 'traffic', 'priceClick', columns)}</td>
+            <td>{preprocessingValue(result.traffic.expenses, 'traffic', 'expenses', columns)}</td>
+            <td className="td_link">{preprocessingValue(result.sales.quantity, 'sales', 'quantity', columns)}</td>
+            <td>{preprocessingValue(result.sales.cpa, 'sales', 'cpa', columns)}</td>
+            <td>{preprocessingValue(result.sales.revenue, 'sales', 'revenue', columns)}</td>
+            <td>{preprocessingValue(result.purpose.quantity, 'purpose', 'quantity', columns)}</td>
+            <td>{preprocessingValue(result.purpose.cpa, 'purpose', 'cpa', columns)}</td>
+            <td>{preprocessingValue(result.purpose.cr, 'purpose', 'cr', columns)}</td>
         </>
-        )
-        }
+    )
+}
 
-        export {TableRowResult}
+export {TableRowResult}

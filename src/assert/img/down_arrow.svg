@@ -1,18 +1,21 @@
-<?xml version="1.0" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="body_1" width="20" height="17">
-
-<defs>
-    <clipPath  id="1">
-
-    <path id=""  clip-rule="evenodd" transform="matrix(1 0 0 1 0 0)"  d="M15 -0.5L15 13L15 13L0 13L0 13L0 -0.5L0 -0.5L15 -0.5z" />    </clipPath>
-</defs>
-
-<g transform="matrix(1.3333 0 0 1.3333 0 0)">
-	<g clip-path="url(#1)" >
-    <path id=""  transform="matrix(1 0 0 -1 0 13)"  d="M7.500003 12.749995L7.500003 12.749995L7.500003 12.749995L7.500003 0.7499962" stroke="#000000" stroke-width="1.4999999" fill="none" />
-    <path id=""  transform="matrix(1 0 0 -1 0 13)"  d="M7.500003 0.7499962L7.500003 0.7499962L7.500003 0.7499962L1.4533105 6.796689" stroke="#000000" stroke-width="1.4999999" fill="none" />
-    <path id=""  transform="matrix(1 0 0 -1 0 13)"  d="M7.500003 0.7499962L7.500003 0.7499962L7.500003 0.7499962L13.546696 6.796689" stroke="#000000" stroke-width="1.4999999" fill="none" />
-	</g>
-</g>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="128px" height="128px" viewBox="0 0 128 128" enable-background="new 0 0 128 128" xml:space="preserve">  <image id="image0" width="128" height="128" x="0" y="0"
+    xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAQAAABpN6lAAAAABGdBTUEAALGPC/xhBQAAACBjSFJN
+AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElN
+RQflBwgPEBJP7vBKAAACuklEQVR42u3dPU7jUAAE4NmIdrXtRqJwEejYcAhaOnIZ7pFTrJRmWyRu
+EO2KC4ASCVoOYB4FSGvAP+/PmfeeZ9wZiGc+IoOQLABFURRFURRlmvlGvfocSwD/8Mhm4IzfoIaB
+QY0N5uw6h5//ANM4HqZGsPkw38Bgw650yMzf3/zNo+a8B2YUgGXLdWdYTgfgu8PZIgESigDYBdgR
+ALsAOwJgF2BHAOwC7AiAXYAdAbALsCMAdgF2BMAuwI4A2AXYEQC7ADsCYBdgRwDsAuwIgF2AHQGw
+C7AjAHYBdgTALsCOANgF2BEAuwA7AmAXYEcA7ALsCIBdgB0BsAuwIwB2AXYEwC7AjgDYBdiZPMCR
+81f8whUqPOMGf/DCrv+eGS5xgR+4x2/cjXmhI6wbT/xtUXm+zurLU4MGBivPV6uwbTx9uPb4plpn
+/anyDgs6wAK7T6+zHmv+Wcvznn4E8QC+zjeocWb/Ai43wVXLZx/j1vNdECML3OK4ZZMDpQtA1XqW
+R9A+v7tpMMBzx3kOQff87qaBADedHzk8Qd/8vqZBmTV+3Jig22HoTbDt1vf/2I73613Ve2F7gjCA
+xUCLaqz5AHCCfQSCEID++XucjDk/FoE/AH1+HAJfgCTmxyDwA0hmfjiBD0BS80MJ3AGSmx9G4AqQ
+5PwQAjeAZOf7E7gAJD3fl8AeIPn5fgS2AFnM9yGwA8hmvjuBDUBW810JhgGym+9GMASQ5XwXgn6A
+bOfbE/QBZD3flqAbIPv5dgRdAEXMtyG4bj1/Xcr8YYLa4WyW84cJ3I4M58ckyHR+LIKM58cgyHx+
+KEEB80MICpnvS1DQfB+Cwua7EhQ434Wg0Pm2BAXPtyEofP4QwQTmA8BpB8Eep+xqTIIJzX8j+PjH
+j9205gPJ/KMl7r/a+olzAH/xRG2hKIqiKIqiTDKvWOem1EyF1LIAAAAldEVYdGRhdGU6Y3JlYXRl
+ADIwMjEtMDctMDhUMTU6MTY6MTgrMDM6MDCD2QrDAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDIxLTA3
+LTA4VDE1OjE2OjE4KzAzOjAw8oSyfwAAAABJRU5ErkJggg==" />
 </svg>

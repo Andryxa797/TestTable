@@ -1,29 +1,37 @@
-import iconGears from "../assert/img/icon-gears.svg";
-import iconInformation from "../assert/img/icon-information.svg";
+import iconGears from "../../assert/img/icon-gears.svg";
+import iconInformation from "../../assert/img/icon-information.svg";
+
+import iconCRM from "../../assert/img/crm.png"
+import iconModelLinear from "../../assert/img/model_linear.png"
+import iconCompositeOne from "../../assert/img/composite1.png"
+import iconComposite from "../../assert/img/composite.png"
 import React from "react";
 
-export const columns = [
+const columns = [
     {
         key: 'trafficSource',
         title: 'Источник трафика',
-        subTitles: [
+        haveInformationIcon: null,
+        subColumns: [
             {
                 parent: 'trafficSource',
                 key: 'title',
                 name: 'Название',
+                isSort: true
             }
         ],
     },
     {
         key: 'traffic',
-        title: 'Трафика',
-        subTitles: [
+        title: 'Трафик',
+        haveInformationIcon: 'Трафик Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley',
+        subColumns: [
             {
                 parent: 'traffic',
                 key: 'impressions',
                 name: 'Показы',
                 maxlength: 6,
-                haveInformationIcon: true,
+                haveInformationIcon: 'Показы =) Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
                 isNarrowCol: false
             },
             {
@@ -48,7 +56,7 @@ export const columns = [
                 key: 'ctr',
                 name: 'CTR,%',
                 maxlength: 3,
-                haveInformationIcon: true,
+                haveInformationIcon:  'CTR %',
                 isNarrowCol: false
             },
             {
@@ -64,27 +72,23 @@ export const columns = [
                 key: 'expenses',
                 name: 'Затраты',
                 maxlength: 6,
-                haveInformationIcon: true,
+                haveInformationIcon: 'Затраты Lorem Ipsum is simply dummy text ever since the 1500s, when an unknown printer took a galley',
                 isNarrowCol: false
             }
         ],
-        additionalIcons: (
-            <>
-                <img src={iconGears} alt=""/>
-                <img src={iconInformation} alt=""/>
-            </>
-        ),
+        additionalIconsGears: <img src={iconGears} alt=""/>,
+        additionalIconsInformation:  <img src={iconInformation} alt=""/>,
     },
     {
         key: 'sales',
         title: 'Продажи',
-        additionalIcons: (
-            <>
-                <img src={iconGears} alt=""/>
-                <img src={iconInformation} alt=""/>
-            </>
-        ),
-        subTitles: [
+        titleIcon: <img src={iconCRM} alt=""/>,
+        subTitle: 'Линейная модель',
+        subTitleIcon: <img src={iconModelLinear} alt=""/>,
+        additionalIconsGears: <img src={iconGears} alt=""/>,
+        additionalIconsInformation:  <img src={iconInformation} alt=""/>,
+        haveInformationIcon: 'Продажи Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley',
+        subColumns: [
             {
                 parent: 'sales',
                 key: 'quantity',
@@ -106,7 +110,7 @@ export const columns = [
                 key: 'revenue',
                 name: 'Выручка',
                 maxlength: 5,
-                haveInformationIcon: false,
+                haveInformationIcon: 'Выручка Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the',
                 isNarrowCol: false
             }
         ]
@@ -114,13 +118,13 @@ export const columns = [
     {
         key: 'purpose',
         title: 'Цель с осн. GA',
-        additionalIcons: (
-            <>
-                <img src={iconGears} alt=""/>
-                <img src={iconInformation} alt=""/>
-            </>
-        ),
-        subTitles: [
+        titleIcon: <img src={iconCompositeOne} alt=""/>,
+        subTitle: 'Состовная цель',
+        subTitleIcon: <img src={iconComposite} alt=""/>,
+        additionalIconsGears: <img src={iconGears} alt=""/>,
+        additionalIconsInformation:  <img src={iconInformation} alt=""/>,
+        haveInformationIcon:'Цель с осн. GA',
+        subColumns: [
             {
                 parent: 'purpose',
                 key: 'quantity',
@@ -147,6 +151,5 @@ export const columns = [
             }
         ]
     },
-
 ]
-
+export {columns}
