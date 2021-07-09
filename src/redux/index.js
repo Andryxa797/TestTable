@@ -1,5 +1,5 @@
 import {applyMiddleware, combineReducers, compose, createStore} from "redux";
-import {reducerTable} from "./reducerTable";
+import reducerTable from "./../reducers/table";
 
 let reducers = combineReducers({
     table: reducerTable

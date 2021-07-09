@@ -1,8 +1,8 @@
 import React from 'react'
-import {Table} from "../../components/Table/Table";
+import {Table} from "../../components/table";
 import {connect} from "react-redux";
-import {setSortField, setStateData, toggleButtonIsVisible} from "../../redux/reducerTable";
-import {TableHeader} from "../../components/Table/TableHeader/TableHeader";
+import {setSortField, setStateData, toggleButtonIsVisible} from "../../actions/table";
+import {TableHeader} from "../../components/table/tableHeader";
 import {columns} from "./columns";
 import {data} from "../../data/data";
 
@@ -33,13 +33,13 @@ class TableContainer extends React.Component {
         return (
             <div className="container">
                 <table className="table">
-                        <TableHeader setSortField={setSortField}
-                                     sortOptions={sortOptions}
-                                     columns={columns}/>
+                    <TableHeader setSortField={setSortField}
+                                 sortOptions={sortOptions}
+                                 columns={columns}/>
                     <tbody>
-                        <Table result={this.props.result}
-                               companies={this.sortData(this.props.sortOptions, this.props.companies)}
-                               toggleButtonIsVisible={this.props.toggleButtonIsVisible}/>
+                    <Table result={this.props.result}
+                           companies={this.sortData(this.props.sortOptions, this.props.companies)}
+                           toggleButtonIsVisible={this.props.toggleButtonIsVisible}/>
                     </tbody>
                 </table>
             </div>);

@@ -1,6 +1,6 @@
 import React from "react";
-import {checkMaxLengthValue, checkNull, partitioningValue} from "../../../helpers/helpers";
-import {columns} from "../../../componentsContainer/Table/columns";
+import {checkMaxLengthValue, checkNull, partitioningValue} from "../../../../helpers/helpers";
+import {columns} from "../../../../conteiners/table/columns";
 
 const TableRowResult = ({result}) => {
 

@@ -1,6 +1,6 @@
 import React from "react";
-import {TableRowResult} from "./TableRow/TableRowResult";
-import {TableRowCompany} from "./TableRow/TableRowCompany";
+import {TableRowResult} from "./tableRow/tableRowResult";
+import {TableRowCompany} from "./tableRow/tableRowCompany";
 
 
 let Table = ({result, companies, toggleButtonIsVisible}) => {

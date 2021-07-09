@@ -11,31 +11,8 @@ let stateInitialization = {
     result: {},
     companies: []
 }
-export let setStateData = (result, companies) => {
-    return {
-        type: SET_STATE_DATA,
-        result,
-        companies
-    }
-}
 
-export let toggleButtonIsVisible = (companyId) => {
-    return {
-        type: TOGGLE_BUTTON_IS_VISIBLE,
-        companyId
-    }
-}
-
-export let setSortField = (fieldParent, fieldKey) => {
-    return {
-        type: SORT_FIELD,
-        parent: fieldParent,
-        key: fieldKey
-    }
-}
-
-
-export function reducerTable(state = stateInitialization, action) {
+export default function reducerTable(state = stateInitialization, action) {
     switch (action.type) {
         case TOGGLE_BUTTON_IS_VISIBLE: {
             let companies = state.companies.map((company) => {

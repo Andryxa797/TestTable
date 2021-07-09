@@ -1,12 +1,12 @@
 import './App.css';
 import React from "react";
-import TableContainer from "./componentsContainer/Table/TableContainer";
-import {columns} from "./componentsContainer/Table/columns";
+import Table from './conteiners/table'
+
 
 function App() {
   return (
     <div className="App">
-      <TableContainer columns={columns}/>
+      <Table />
     </div>
   );
 }

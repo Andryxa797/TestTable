@@ -2,7 +2,7 @@ import React from "react";
 import iconInformation from "../../../../assert/img/icon-information.svg"
 import downArrow from "../../../../assert/img/down_arrow.svg"
 import upArrow from "../../../../assert/img/up_arrow.svg"
-import Tooltip from "../../../ToolTip/Tooltip";
+import Tooltip from "../../../toolTip";
 
 
 let TableHeaderBottom = ({columns, setSortField, sortOptions}) => {

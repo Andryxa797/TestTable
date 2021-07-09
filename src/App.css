@@ -29,7 +29,7 @@ h4 {
 }
 
 
-/* ========== Table ========== */
+/* ========== table ========== */
 
 .table {
     width: 100%;
@@ -40,7 +40,7 @@ h4 {
 }
 
 
-/* ========== Table-header ========== */
+/* ========== table-header ========== */
 
 .thead__left {
     display: flex;
@@ -85,7 +85,7 @@ h4 {
 }
 
 
-/* ========== Table-body ========== */
+/* ========== table-body ========== */
 
 .table__tr td, th {
     text-align: end;
@@ -138,7 +138,7 @@ td:nth-child(10), th:nth-child(10) {
 }
 
 
-/* ========== Table-company ========== */
+/* ========== table-company ========== */
 
 .table__company__wrapper {
     display: grid;
@@ -222,7 +222,7 @@ td:nth-child(10), th:nth-child(10) {
     white-space: nowrap;
 }
 
-/* ========== Tooltip ========== */
+/* ========== Index ========== */
 
 .tooltip-container {
     display: inline;
